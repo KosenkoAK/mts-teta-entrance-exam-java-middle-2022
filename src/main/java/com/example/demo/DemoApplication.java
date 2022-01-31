@@ -1,10 +1,18 @@
 package com.example.demo;
 
-
 public class DemoApplication {
 
-  public static void main(String[] args) {
-    System.out.println("Hello, world");
-  }
+    static Server server = new Server();
 
+    static Client client = new Client();
+
+    public static void main(String[] args) throws Exception {
+
+        server.start();
+        client.startClientConnection();
+        client.clientAction();
+        client.startClientConnection();
+        client.clientAction();
+        server.stop();
+    }
 }
